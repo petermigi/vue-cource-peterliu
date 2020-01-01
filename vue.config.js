@@ -4,11 +4,10 @@ const resolve = dir => {
   return path.join(__dirname, dir)
 }
 
-const BASE_URL = process.env.NODE_ENV === 'production' ? '/iview-admin' : '/'
+// const BASE_URL = process.env.NODE_ENV === 'production' ? '/iview-admin' : '/'
 
 module.exports = {
   lintOnSave: false,
-  baseUrl: BASE_URL,
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))
@@ -17,6 +16,6 @@ module.exports = {
   // 打包时不生成.map文件
   productionSourceMap: false,
   devServer: {
-    proxy: 'http://localhost:4000'
+    // proxy: 'http://localhost:4000'
   }
 }
